@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('permissions', function (Blueprint $table) {
             $table->id();
+            $table->string('role');
+            $table->boolean('can_edit_products');
+            $table->boolean('can_delete_products');
+            $table->boolean('can_view_reports');
             $table->timestamps();
         });
     }
