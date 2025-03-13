@@ -1,8 +1,6 @@
 import type { Route } from "./+types/home";
 import { Welcome } from  "../Pages/welcome";
-import { Link } from 'react-router-dom';
 
-import { FaShoppingCart, FaUserAlt } from 'react-icons/fa';
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -13,6 +11,7 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
+      
       <Welcome/>
   )
 
