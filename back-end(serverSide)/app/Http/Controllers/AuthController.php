@@ -33,6 +33,16 @@ class AuthController extends Controller
             'user' => $user
         ]);
     }
+    public function show($id)
+    {
+        $user = User::find($id);
+
+        if (!$user) {
+            return response()->json(['error' => 'User not found'], 404);
+        }
+
+        return response()->json($user);
+    }
 
     public function login(Request $request)
     {

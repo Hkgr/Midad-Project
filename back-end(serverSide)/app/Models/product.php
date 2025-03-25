@@ -9,12 +9,23 @@ use Laravel\Sanctum\HasApiTokens;
 
 
 
-class product extends Model
+class Product extends Model
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasFactory;
 
-    protected $table ='products';
-    
+    protected $fillable = [
+        'name', 'price', 'stock', 'category_id', 'description', 'image_url'
+    ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 
 
+    public function orderItems()
+    {
+        return $this->hasMany(OrderItem::class);
+    }
 }
+
