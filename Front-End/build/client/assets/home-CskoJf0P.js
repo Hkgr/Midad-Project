@@ -1,0 +1,1 @@
+import{w as e}from"./with-props-kfWWD9C7.js";import{l as t}from"./chunk-K6CSEXPM-BkoTNwhC.js";function o(){return t.jsx("h2",{className:"mt-8 text-center",children:"مرحبًا بك في متجرنا الإلكتروني232"})}const s=e(function(){return t.jsx(o,{})});export{s as default};
