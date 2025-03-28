@@ -11,7 +11,9 @@ use Laravel\Sanctum\HasApiTokens;
 
 class Product extends Model
 {
-    use HasFactory;
+    use HasApiTokens, HasFactory, Notifiable;
+
+    protected $table ='products';
 
     protected $fillable = [
         'name', 'price', 'stock', 'category_id', 'description', 'image_url'

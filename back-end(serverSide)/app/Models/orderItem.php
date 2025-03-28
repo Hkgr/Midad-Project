@@ -1,13 +1,24 @@
 <?php
 
 namespace App\Models;
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
 class orderItem extends Model
 {
-    use HasFactory;
+    use HasApiTokens, HasFactory, Notifiable;
+
+    protected $table ='order_items';
+
+    protected $fillable = [
+        'order_id',
+        'product_id',
+        'total_price',
+        'quantity'      
+    ];
+
 
     public function order()
     {
@@ -18,4 +29,5 @@ class orderItem extends Model
     {
         return $this->belongsTo(Product::class);
     }
+    
 }
